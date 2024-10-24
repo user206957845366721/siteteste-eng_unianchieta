@@ -15,6 +15,6 @@ st.write("Como já deve ter percebido, o método st.write() é usado para escrit
 st.write("Quero poder aprender pra caramba, e poder fazer um site bem daora. Talvez eu até aprenda HTML no futuro, só pra fazer sites bonitinhos, quem sabe. -w-")
 
 st.write("Olha, um gato pequenino.")
-st.image(https://github.com/user206957845366721/siteteste-eng_unianchieta/blob/main/329fa7b5e6b977eeaba08c26620f7301.jpg)
+st.image("https://github.com/user206957845366721/siteteste-eng_unianchieta/blob/main/329fa7b5e6b977eeaba08c26620f7301.jpg")
 
 #yippee!! O-O
