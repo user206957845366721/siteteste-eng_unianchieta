@@ -12,5 +12,6 @@ st.subheader("Site para ser programado durante as aulas de algoritmo e programa�
 
 # Use st.write("") para adicionar um texto ao seu Web app
 st.write("Como já deve ter percebido, o método st.write() é usado para escrita de texto e informações gerais!")
+st.write("Quero poder aprender pra caramba, e poder fazer um site bem daora. Talvez eu até aprenda HTML no futuro, só pra fazer sites bonitinhos, quem sabe. -w-")
 
 #yippee!! O-O
