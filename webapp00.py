@@ -14,7 +14,6 @@ st.subheader("Site para ser programado durante as aulas de algoritmo e programa�
 st.write("Como já deve ter percebido, o método st.write() é usado para escrita de texto e informações gerais!")
 st.write("Quero poder aprender pra caramba, e poder fazer um site bem daora. Talvez eu até aprenda HTML no futuro, só pra fazer sites bonitinhos, quem sabe. -w-")
 
-st.write("Olha, um gato pequenino.")
-st.image("https://github.com/user206957845366721/siteteste-eng_unianchieta/blob/main/329fa7b5e6b977eeaba08c26620f7301.jpg")
+st.image(C:\Users\Administrador\Downloads\jinx.jpg, caption="Olha, um gato.", width=100, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
 
 #yippee!! O-O
