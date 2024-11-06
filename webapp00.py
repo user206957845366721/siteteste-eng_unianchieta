@@ -10,6 +10,6 @@ st.header("Site de Tabela de Orçamentos - Engenharia Civil 2024")
 # Use st.subheader("") para adicionar um SUB CABEÇALHO ao seu Web app
 st.subheader("Selecione as opções desejadas na tabela abaixo:")
 
-a = st.sidebar.radio("Selecione uma opção:", ["Gráfico", "Tabela Interativa"])
+st.selectbox("Selecione uma opção:", ["Tabela", "Gráfico"])
 
 # Use st.write("") para adicionar um texto ao seu Web app
