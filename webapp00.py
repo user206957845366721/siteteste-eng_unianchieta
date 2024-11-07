@@ -14,7 +14,7 @@ st.title("Bem-vindo/a!")
 st.header("Site de Tabela de Orçamentos - Engenharia Civil 2024")
 
 # Use st.subheader("") para adicionar um SUB CABEÇALHO ao seu Web app
-st.subheader("Selecione as opções desejadas na tabela abaixo:")
+st.subheader("Selecione as opções desejadas abaixo:")
 
 df1 = pd.DataFrame(np.random.randn(5, 5), columns=("col %d" % i for i in range(5)))
 
@@ -24,7 +24,5 @@ if left.button("Tabela", use_container_width=True):
     left.markdown(st.dataframe(df1))
 if right.button("Gráfico", icon=":material/mood:", use_container_width=True):
     right.markdown(st.dataframe(df1))
-
-st.selectbox("Selecione uma opção:", ["Tabela", "Gráfico"])
 
 # Use st.write("") para adicionar um texto ao seu Web app
