@@ -1,6 +1,8 @@
 # MEU PRIMEIRO WEB APP
 import streamlit as st
-  
+
+
+st.logo("Programação Engenharia Civil.png")
 # Use st.title("") para adicionar um TÍTULO ao seu Web app
 st.title("Bem-vindo/a!")
 
