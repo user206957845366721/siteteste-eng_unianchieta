@@ -15,6 +15,6 @@ st.subheader("Selecione as opções desejadas na tabela abaixo:")
 
 st.selectbox("Selecione uma opção:", ["Tabela", "Gráfico"])
 
-st.bar_chart(df)
+st.sidebar("Teste" [1, 2])
 
 # Use st.write("") para adicionar um texto ao seu Web app
