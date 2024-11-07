@@ -15,7 +15,7 @@ st.subheader("Selecione as opções desejadas na tabela abaixo:")
 
 st.selectbox("Selecione uma opção:", ["Tabela", "Gráfico"])
 
-a = st.sidebar.radio("Teste", [teste])
+st.sidebar.radio("Teste", [teste])
 
 
 # Use st.write("") para adicionar um texto ao seu Web app
