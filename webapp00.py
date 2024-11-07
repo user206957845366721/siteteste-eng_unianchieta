@@ -22,7 +22,7 @@ df2 = pd.DataFrame(np.random.randn(10,5), columns=("col %d" % i for i in range(5
 left, right = st.columns(2)
 if left.button("Tabela", use_container_width=True):
     left.markdown(st.dataframe(df1))
-if right.button("Gráfico", icon=":material/mood:", use_container_width=True):
+if right.button("Gráfico", use_container_width=True):
     right.markdown(st.dataframe(df2))
 
 # Use st.write("") para adicionar um texto ao seu Web app
