@@ -17,7 +17,7 @@ st.header("Site de Tabela de Orçamentos - Engenharia Civil 2024")
 st.subheader("Selecione as opções desejadas abaixo:")
 
 df1 = pd.DataFrame(np.random.randn(5, 5), columns=("col %d" % i for i in range(5)))
-df2 = pd.DataFrame(np.random.randn(10,5), columns=("col %d" % i for i in range(10))
+df2 = pd.DataFrame(np.random.randn(10,5), columns=("col %d" % i for i in range(10)))
                 
 
 left, right = st.columns(2)
