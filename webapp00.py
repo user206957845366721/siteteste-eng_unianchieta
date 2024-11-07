@@ -18,12 +18,12 @@ st.subheader("Selecione as opções desejadas abaixo:")
 
 df1 = pd.DataFrame(
     [
-        {"command": "np.random.randn", columns=("col %d" % i for i in range(11)},
+        {"command": "np.random.randn", columns=("col %d" % i for i in range(11))},
     ]
 )
 df2 = pd.DataFrame(
     [
-        {"command": "np.random.randn", columns=("col %d" % i for i in range(11)},
+        {"command": "np.random.randn", columns=("col %d" % i for i in range(11))},
     ]
 )
 
