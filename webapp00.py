@@ -18,13 +18,13 @@ st.subheader("Selecione as opções desejadas abaixo:")
 
 df1 = pd.DataFrame(np.random.randn(5, 5), columns=("col %d" % i for i in range(5)))
 df2 = pd.DataFrame(np.random.randn(10,5), columns=("col %d" % i for i in range(5)))
-                
-st.dataframe(df.style.highlight_max(axis=1))
 
 left, right = st.columns(2)
 if left.button("Tabela", use_container_width=True):
     left.markdown(st.dataframe(df1))
 if right.button("Gráfico", icon=":material/mood:", use_container_width=True):
     right.markdown(st.dataframe(df2))
+
+st.dataframe(df.style.highlight_max(axis=1))
 
 # Use st.write("") para adicionar um texto ao seu Web app
