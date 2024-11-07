@@ -1,9 +1,6 @@
 # MEU PRIMEIRO WEB APP
 import streamlit as st
 
-
-st.logo("Programação Engenharia Civil.png")
-st.image("./Programação Engenharia Civil.png")
 # Use st.title("") para adicionar um TÍTULO ao seu Web app
 st.title("Bem-vindo/a!")
 
@@ -14,5 +11,7 @@ st.header("Site de Tabela de Orçamentos - Engenharia Civil 2024")
 st.subheader("Selecione as opções desejadas na tabela abaixo:")
 
 st.selectbox("Selecione uma opção:", ["Tabela", "Gráfico"])
+with st.container():
+    st.image("Programação Engenharia Civil.png")
 
 # Use st.write("") para adicionar um texto ao seu Web app
