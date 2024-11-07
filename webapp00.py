@@ -16,17 +16,6 @@ st.header("Site de Tabela de Orçamentos - Engenharia Civil 2024")
 # Use st.subheader("") para adicionar um SUB CABEÇALHO ao seu Web app
 st.subheader("Selecione as opções desejadas abaixo:")
 
-df1 = pd.DataFrame(
-    [
-        {"command": "np.random.randn", columns=("col %d" % i for i in range(11))},
-    ]
-)
-df2 = pd.DataFrame(
-    [
-        {"command": "np.random.randn", columns=("col %d" % i for i in range(11))},
-    ]
-)
-
 left, right = st.columns(2)
 if left.button("Tabela", use_container_width=True):
     left.markdown(st.dataframe(df1))
@@ -34,3 +23,5 @@ if right.button("Gráfico", use_container_width=True):
     right.markdown(st.dataframe(df2))
 
 # Use st.write("") para adicionar um texto ao seu Web app
+
+#usar excel. usar abas. cada aba tem dados de materiais, usar isso para comparar. e criar 3 pelo menos, das coisas que vamos usar
