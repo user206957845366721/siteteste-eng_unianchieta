@@ -15,8 +15,8 @@ st.header("Site de Tabela de Orçamentos - Engenharia Civil 2024")
 
 uploaded_file = st.file_uploader("Carregue o seu orçamento aqui.", type=["xlsx", "xls"])
 if uploaded_file is not None:
-    df = pd_read_excel(uploaded_file)
-st.dataframe(df)
+    df = pd.read_excel(uploaded_file)
+else st.write("Nenhum arquivo carregado.")
 
 
 #usar excel. usar abas. cada aba tem dados de materiais, usar isso para comparar. e criar 3 pelo menos, das coisas que vamos usar
