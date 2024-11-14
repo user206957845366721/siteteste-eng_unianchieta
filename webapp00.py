@@ -34,7 +34,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-data = st.file_uploader("Faça Upload da Lista.XLSX para envio em lote.", type=["xlsx"])
+data = st.file_uploader("Faça Upload da Lista.XLSX para envio em lote.", type=["xlsx", "xls"])
 PressBotaoEnviaLISTA = st.button(label = '✔️ ENVIAR PARA LISTA')
 if data is not None:
     df = pd.read_excel(data)   
