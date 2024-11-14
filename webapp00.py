@@ -4,12 +4,13 @@ import pandas as pd
 import numpy as np
 import requests
 
-with st.container():
-    st.image("Programação Engenharia Civil.png", use_column_width='auto')
 set.page.config(
     page_title="Calculadora de Orçamentos",
     page_icon="❇️",
 )
+
+with st.container():
+    st.image("Programação Engenharia Civil.png", use_column_width='auto')
 
 # Use st.title("") para adicionar um TÍTULO ao seu Web app
 st.title("Bem-vindo/a!")
