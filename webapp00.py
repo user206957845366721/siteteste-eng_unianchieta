@@ -19,8 +19,4 @@ if uploaded_file is not None:
 st.dataframe(df)
 
 
-
-
-# Use st.write("") para adicionar um texto ao seu Web app
-
 #usar excel. usar abas. cada aba tem dados de materiais, usar isso para comparar. e criar 3 pelo menos, das coisas que vamos usar
