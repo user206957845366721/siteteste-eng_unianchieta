@@ -9,3 +9,4 @@ plotly.express
 ACTlib01
 wordcloud
 pdfquery
+xlrd
