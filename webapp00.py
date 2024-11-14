@@ -34,9 +34,9 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-uploaded_file = st.file_uploader("Carregue o seu orçamento aqui.", type=["xlsx", "xls"])
+data = st.file_uploader("Carregue o seu orçamento aqui.", type=["xlsx", "xls"])
 if uploaded_file is not None:
-    df = pd.read_excel(uploaded_file) 
+    df = pd.read_excel(data) 
     st.write(df)
 else:
     st.write("Nenhum arquivo carregado.")
