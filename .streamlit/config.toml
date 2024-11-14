@@ -1,5 +1,5 @@
 [theme]
-primaryColor = "##1d6fba"
-backgroundColor = "#073763"
+primaryColor = "#073763"
+backgroundColor = "#1d6fba"
 textColor = "#212f3b"
 font = "monospace"
