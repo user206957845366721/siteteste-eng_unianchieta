@@ -4,14 +4,23 @@ import pandas as pd
 import numpy as np
 import requests
 
+st.set_page_config(
+    page_title="Calculadora de Orçamentos",
+    page_icon="🖩",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    menu_items={
+        'Get Help': 'https://docs.streamlit.io',
+        'Report a bug': 'https://docs.streamlit.io',
+        'About': "# Programação Engenharia Civil"
+    }
+)
+
 with st.container():
     st.image("Programação Engenharia Civil.png", use_column_width='auto')
-
-# Use st.title("") para adicionar um TÍTULO ao seu Web app
+    
 st.title("Bem-vindo/a!")
-
-# Use st.header("") para adicionar um CABEÇALHO ao seu Web app
-st.header("Site de Tabela de Orçamentos - Engenharia Civil 2024")
+st.header("Calculadora de Orçamentos - Eng. Civil 2024")
 
 uploaded_file = st.file_uploader("Carregue o seu orçamento aqui.", type=["xlsx", "xls"])
 if uploaded_file is not None:
