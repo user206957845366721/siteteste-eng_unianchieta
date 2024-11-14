@@ -22,6 +22,18 @@ with st.container():
 st.title("Bem-vindo/a!")
 st.header("Calculadora de Orçamentos - Eng. Civil 2024")
 
+st.markdown(
+    """
+    <style>
+        .css-1m8jjsw edgvbvh3 {
+        background-color: #135fa6; /COR FUNDO/
+        color: white /COR TEXTO/
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 uploaded_file = st.file_uploader("Carregue o seu orçamento aqui.", type=["xlsx", "xls"])
 if uploaded_file is not None:
     df = pd.read_excel(uploaded_file)
