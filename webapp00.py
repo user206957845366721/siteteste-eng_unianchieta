@@ -6,6 +6,10 @@ import requests
 
 with st.container():
     st.image("Programação Engenharia Civil.png")
+set.page.config(
+    page_title="Calculadora de Orçamentos"
+    page_icon="❇️"
+
 
 # Use st.title("") para adicionar um TÍTULO ao seu Web app
 st.title("Bem-vindo/a!")
