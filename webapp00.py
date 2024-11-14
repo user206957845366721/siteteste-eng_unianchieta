@@ -14,6 +14,7 @@ st.title("Bem-vindo/a!")
 st.header("Site de Tabela de Orçamentos - Engenharia Civil 2024")
 
 uploaded_file = st.file_uploader("Carregue o seu orçamento aqui.", type=["xlsx", "xls"])
+df = pd_read_excel(uploaded_file)
 if uploaded_file is not None:
     df = pd_read_excel(uploaded_file)
 st.dataframe(df)
