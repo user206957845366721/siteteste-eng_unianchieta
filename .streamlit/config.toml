@@ -1,2 +1,5 @@
-.streamlit/config.toml
-streamlit run
+[theme]
+primaryColor = "#839d9e"
+backgroundColor = "#00172B"
+textColor = "#FFFFFF"
+font = "arial"
