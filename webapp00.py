@@ -17,7 +17,7 @@ st.set_page_config(
 )
 
 with st.container():
-    st.image("tech.jpg", use_column_width='auto')
+    st.image("tech.jpg", use_column_width=True)
     
 st.title("Bem-vindo/a!")
 st.header("Calculadora de Orçamentos - Eng. Civil 2024")
