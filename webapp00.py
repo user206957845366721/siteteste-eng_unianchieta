@@ -22,11 +22,7 @@ if uploaded_file is not None:
 st.dataframe(df)
 
 
-left, right = st.columns(2)
-if left.button("Tabela", use_container_width=True):
-    left.markdown(st.dataframe(df))
-if right.button("Gráfico", use_container_width=True):
-    right.markdown(st.dataframe(df))
+
 
 # Use st.write("") para adicionar um texto ao seu Web app
 
