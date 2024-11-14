@@ -13,9 +13,6 @@ st.title("Bem-vindo/a!")
 # Use st.header("") para adicionar um CABEÇALHO ao seu Web app
 st.header("Site de Tabela de Orçamentos - Engenharia Civil 2024")
 
-# Use st.subheader("") para adicionar um SUB CABEÇALHO ao seu Web app
-st.subheader("Selecione as opções desejadas abaixo:")
-
 uploaded_file = st.file_uploader("Carregue o seu orçamento aqui.", type=["xlsx", "xls"])
 if uploaded_file is not None:
     df = pd_read_excel(uploaded_file)
