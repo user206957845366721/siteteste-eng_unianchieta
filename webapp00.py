@@ -41,7 +41,7 @@ if data is not None:
     st.write(df)
     df.columns = ['C1','C2','C3','C4','C5','C6','C7','C8','C9']
     st.write(df.columns)
-
+    st.write(df)
 
 
 #data = st.file_uploader("Carregue o seu orçamento aqui.", type=["xlsx", "xls"])
