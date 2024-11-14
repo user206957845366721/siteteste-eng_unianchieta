@@ -41,4 +41,4 @@ else:
     st.write("Nenhum arquivo carregado.")
 
 
-#usar excel. usar abas. cada aba tem dados de materiais, usar isso para comparar. e criar 3 pelo menos, das coisas que vamos usar
+#cliente insere dados, que voltam como uma planilha do excel. gera arquivos. criar espaços para inserir dados.
