@@ -34,11 +34,18 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-data = st.file_uploader("Carregue o seu orçamento aqui.", type=["xlsx", "xls"])
+data = st.file_uploader("Faça Upload da Lista.XLSX para envio em lote.", type=["xlsx"])
+PressBotaoEnviaLISTA = st.button(label = '✔️ ENVIAR PARA LISTA')
 if data is not None:
-    df = pd.read_excel(data) 
-    st.write(df)
-else:
-    st.write("Nenhum arquivo carregado.")
+    df = pd.read_excel(data)   
+
+
+
+#data = st.file_uploader("Carregue o seu orçamento aqui.", type=["xlsx", "xls"])
+#if data is not None:
+#    df = pd.read_excel(data) 
+#    st.write(df)
+#else:
+#    st.write("Nenhum arquivo carregado.")
 
 #cliente insere dados, que voltam como uma planilha do excel. gera arquivos. criar espaços para inserir dados.
