@@ -3,10 +3,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import requests
-set_page_config(
-    page_title="Calculadora de Orçamentos",
-    page_icon="❇️",
-)
 
 with st.container():
     st.image("Programação Engenharia Civil.png", use_column_width='auto')
