@@ -39,6 +39,7 @@ PressBotaoEnviaLISTA = st.button(label = '✔️ ENVIAR PARA LISTA')
 if data is not None:
     df = pd.read_excel(data)   
     st.write(df)
+    st.write(df.columns)
 
 
 
