@@ -36,9 +36,9 @@ st.markdown(
 
 uploaded_file = st.file_uploader("Carregue o seu orçamento aqui.", type=["xlsx", "xls"])
 if uploaded_file is not None:
-    df = pd.read_excel(uploaded_file)
+    df = pd.read_excel(uploaded_file) 
+    st.write(df)
 else:
     st.write("Nenhum arquivo carregado.")
-st.write(df)
 
 #cliente insere dados, que voltam como uma planilha do excel. gera arquivos. criar espaços para inserir dados.
