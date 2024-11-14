@@ -35,7 +35,7 @@ st.markdown(
 )
 
 data = st.file_uploader("Carregue o seu orçamento aqui.", type=["xlsx", "xls"])
-if uploaded_file is not None:
+if data is not None:
     df = pd.read_excel(data) 
     st.write(df)
 else:
