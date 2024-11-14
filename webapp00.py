@@ -8,7 +8,7 @@ with st.container():
     st.image("Programação Engenharia Civil.png", use_column_width='auto')
 set.page.config(
     page_title="Calculadora de Orçamentos",
-    page_icon="❇️"
+    page_icon="❇️",
 )
 
 # Use st.title("") para adicionar um TÍTULO ao seu Web app
@@ -20,11 +20,17 @@ st.header("Site de Tabela de Orçamentos - Engenharia Civil 2024")
 # Use st.subheader("") para adicionar um SUB CABEÇALHO ao seu Web app
 st.subheader("Selecione as opções desejadas abaixo:")
 
+uploaded_file = st.file_uploader("Carregue o seu orçamento aqui.", type=["xlsx", "xls"])
+if uploaded_file is not None
+    df = pd_read_excel(uploaded_file)
+st.dataframe(df)
+
+
 left, right = st.columns(2)
 if left.button("Tabela", use_container_width=True):
-    left.markdown(st.dataframe(df1))
+    left.markdown(st.dataframe(df))
 if right.button("Gráfico", use_container_width=True):
-    right.markdown(st.dataframe(df2))
+    right.markdown(st.dataframe(df))
 
 # Use st.write("") para adicionar um texto ao seu Web app
 
