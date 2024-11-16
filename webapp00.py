@@ -75,7 +75,7 @@ def calcular_orçamento(df_com_preços):
         preço_com_desconto = row['R$'] * (1 - row['DESCONTOS'] / 100)
         df.at[index, 'Preço com desconto'] = preço_com_desconto
         total += preço_com_desconto
-    return df, total
+    return df_com_preços, total
 
 #PROCESSO PARA GERAR O PDF DO ORÇAMENTO
 def gerar_pdf():
