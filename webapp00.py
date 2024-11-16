@@ -56,15 +56,15 @@ def selecionar_produtos(df):
     else:
         return pd.DataFrame()
 
-#ADD PREÇOS E DESCONTOS
-def adicionar_preços_descontos(df):
+#ADD PREÇOS E DESCONTO
+def adicionar_preços_DESCONTO(df):
     if df is not None:
         for index, row in df.iterrows():
             with st.expander(f"Produto: {row['DESCRIÇÃO']}"):
                 preço = st.number_input(f"Preço de {row['DESCRIÇÃO']}", min_value=0.0, value=row['R$'], key=f"preço_{index}")
-                desconto = st.number_input(f"Desconto (%) para {row['DESCRIÇÃO']}", min_value=0.0, max_value=100.0, value=row['DESCONTOS'], key=f"desconto_{index}")
+                desconto = st.number_input(f"Desconto (%) para {row['DESCRIÇÃO']}", min_value=0.0, max_value=100.0, value=row['DESCONTO'], key=f"desconto_{index}")
                 df.at[index, 'R$'] = preço
-                df.at[index, 'DESCONTOS'] = desconto
+                df.at[index, 'DESCONTO'] = desconto
         return df
     else:
         return pd.DataFrame()
@@ -73,7 +73,7 @@ def adicionar_preços_descontos(df):
 def calcular_orçamento(df_com_preços):
     total = 0
     for index, row in df_com_preços.iterrows():
-        preço_com_desconto = row['R$'] * (1 - row['DESCONTOS'] / 100)
+        preço_com_desconto = row['R$'] * (1 - row['DESCONTO'] / 100)
         df.at[index, 'Preço com desconto'] = preço_com_desconto
         total += preço_com_desconto
     return df_com_preços, total
@@ -89,7 +89,7 @@ def gerar_pdf():
     pdf.ln(10)
     pdf.cell(40, 10, row['DESCRIÇÃO'], border=1)
     pdf.cell(40, 10, f"R$ {row['R$']:.2f}", border=1)
-    pdf.cell(40, 10, f"{row['DESCONTOS']}%", border=1)
+    pdf.cell(40, 10, f"{row['DESCONTO']}%", border=1)
     pdf.cell(40, 10, f"R$ {row['Preço com desconto']:.2f}", border=1)
     pdf.ln()
 
