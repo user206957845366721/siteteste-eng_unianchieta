@@ -87,7 +87,7 @@ def gerar_pdf():
 
     pdf.ln(10)
     pdf.cell(40, 10, row['DESCRIÇÃO'], border=1)
-    pdf.cell(40, 10, f"R$ row{['R$']:.2f}", border=1)
+    pdf.cell(40, 10, f"R$ {row['R$']:.2f}", border=1)
     pdf.cell(40, 10, f"{row['DESCONTOS']}%", border=1)
     pdf.cell(40, 10, f"R$ {row['Preço com desconto']:.2f}", border=1)
     pdf.ln()
