@@ -106,6 +106,9 @@ def main():
     if df is not None:
         # Selecionar os produtos
         df_selecionados = selecionar_produtos(df)
+
+        #VERIFICAR DF DE SELECIONADOS
+        st.write("Dataframe de produtos selecionados:", df_selecionados)
         
         # Adicionar preços e descontos aos produtos
         df_com_preços = adicionar_preços_descontos(df_selecionados)
