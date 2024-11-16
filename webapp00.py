@@ -107,18 +107,18 @@ def main():
         df_selecionados = selecionar_produtos(df)
         
         # Adicionar preços e descontos aos produtos
-        df_com_precos = adicionar_preços_descontos(df_selecionados)
+        df_com_preços = adicionar_preços_descontos(df_selecionados)
         
         # Calcular o total do orçamento
-        df_com_precos, total = calcular_orcamento(df_com_precos)
+        df_com_preços, total = calcular_orçamento(df_com_preços)
 
         # Exibir o orçamento calculado
         st.write("Orçamento Calculado:")
-        st.dataframe(df_com_precos)
+        st.dataframe(df_com_preços)
 
         # Botão para gerar o PDF do orçamento
         if st.button("Gerar Orçamento em PDF"):
-            buffer_pdf = gerar_pdf(df_com_precos, total)
+            buffer_pdf = gerar_pdf(df_com_preços, total)
             st.download_button(
                 label="Baixar Orçamento em PDF",
                 data=buffer_pdf,
