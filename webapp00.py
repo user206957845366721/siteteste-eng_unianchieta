@@ -62,9 +62,9 @@ def adicionar_preços_descontos(df):
         for index, row in df.iterrows():
             with st.expander(f"Produto: {row['DESCRIÇÃO']}"):
                 preço = st.number_input(f"Preço de {row['DESCRIÇÃO']}", min_value=0.0, value=row['R$'], key=f"preço_{index}")
-                desconto = st.number_input(f"Desconto (%) para {row['DESCRIÇÃO']}", min_value=0.0, max_value=100.0, value=row['DESCONTO'], key=f"desconto_{index}")
+                desconto = st.number_input(f"Desconto (%) para {row['DESCRIÇÃO']}", min_value=0.0, max_value=100.0, value=row['DESCONTOS'], key=f"desconto_{index}")
                 df.at[index, 'R$'] = preço
-                df.at[index, 'DESCONTO'] = desconto
+                df.at[index, 'DESCONTOS'] = desconto
         return df
     else:
         return pd.DataFrame()
