@@ -51,6 +51,9 @@ def selecionar_produtos(df):
     if df is not None:
         produtos_disponiveis = df['DESCRIÇÃO'].tolist()
         produtos_selecionados = st.multiselect("Selecione os produtos", produtos_disponiveis)
+        if not produtos_selecionados
+            st.warning("Nenhum produto selecionado.")
+            return pd.DataFrame()
         df_selecionados = df[df['DESCRIÇÃO'].isin(produtos_selecionados)]
         return df_selecionados
     else:
@@ -106,9 +109,6 @@ def main():
     if df is not None:
         # Selecionar os produtos
         df_selecionados = selecionar_produtos(df)
-
-        #VERIFICAR DF DE SELECIONADOS
-        st.write("Dataframe de produtos selecionados:", df_selecionados)
         
         # Adicionar preços e descontos aos produtos
         df_com_preços = adicionar_preços_descontos(df_selecionados)
