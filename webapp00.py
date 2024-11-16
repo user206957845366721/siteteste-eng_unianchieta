@@ -37,7 +37,7 @@ st.markdown(
 
 #POSSIBILITAR CARREGAMENTO DE PLANILHA
 def carregar_planilha():
-    uploaded_file = st.file_uploader("Carregue sua planilha aqui:", type=[".xlsx])
+    uploaded_file = st.file_uploader("Carregue sua planilha aqui:", type=["xlsx"])
     if uploaded_file is not None:
         df = pd.read_excel(uploaded_file, engine='openpyxl')
         st.write("Produtos carregados:", df)
