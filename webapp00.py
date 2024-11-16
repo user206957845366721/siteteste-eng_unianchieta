@@ -107,7 +107,7 @@ def main():
         df_selecionados = selecionar_produtos(df)
         
         # Adicionar preços e descontos aos produtos
-        df_com_precos = adicionar_precos_descontos(df_selecionados)
+        df_com_precos = adicionar_preços_descontos(df_selecionados)
         
         # Calcular o total do orçamento
         df_com_precos, total = calcular_orcamento(df_com_precos)
