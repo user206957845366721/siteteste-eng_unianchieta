@@ -11,4 +11,3 @@ wordcloud
 pdfquery
 xlrd
 fpdf
-io
