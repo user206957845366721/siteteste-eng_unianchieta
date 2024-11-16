@@ -43,7 +43,7 @@ def carregar_planilha():
         st.write("Produtos carregados:", df)
         return df
     else:
-    st.warning("Por favor, carregue uma planilha do Excel.")
+        st.warning("Por favor, carregue uma planilha do Excel.")
     return None
 
 #SELECIONAR PRODUTOS
