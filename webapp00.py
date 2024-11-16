@@ -71,6 +71,7 @@ def adicionar_preços_descontos(df):
 
 #CALCULAR ORÇAMENTO
 def calcular_orçamento(df_com_preços):
+    total = 0
     for index, row in df_com_preços.iterrows():
         preço_com_desconto = row['R$'] * (1 - row['DESCONTOS'] / 100)
         df.at[index, 'Preço com desconto'] = preço_com_desconto
