@@ -60,7 +60,7 @@ def selecionar_produtos(df):
         return pd.DataFrame()
 
 #ADD PREÇOS E DESCONTO
-def adicionar_preços_DESCONTO(df):
+def adicionar_preços_descontos(df):
     if df is not None:
         for index, row in df.iterrows():
             with st.expander(f"Produto: {row['DESCRIÇÃO']}"):
