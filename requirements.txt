@@ -12,4 +12,3 @@ pdfquery
 xlrd
 fpdf
 io
-BytesIO
