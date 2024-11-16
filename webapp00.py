@@ -35,6 +35,69 @@ st.markdown(
     unsafe_allow_html=True
 )  
 
+#POSSIBILITAR CARREGAMENTO DE PLANILHA
+def carregar_planilha():
+    uploaded_file = st.file_uploader("Carregue sua planilha aqui:", type=["xlsx])
+    if uploaded_file is not None:
+        df = pd.read_excel(uploaded_file, engine='openpyxl')
+        st.write("Produtos carregados:", df)
+        return df
+    else:
+    st.warning("Por favor, carregue uma planilha do Excel.")
+    return None
+
+#SELECIONAR PRODUTOS
+def selecionar_produtos(df):
+    if df is not None:
+        produtos_disponiveis = df['DESCRIÇÃO'].tolist()
+        produtos_selecionados = st.multiselect("Selecione os produtos", produtos_disponiveis)
+        df_selecionados = df[df['DESCRIÇÃO'].isin(produtos_selecionados)]
+        return df_selecionados
+    else:
+        return pd.DataFrame()
+
+#ADD PREÇOS E DESCONTOS
+def adicionar_preços_descontos(df):
+    if df is not None:
+        for index, row in df.iterrows():
+            with st.expander(f"Produto: {row['DESCRIÇÃO']}"):
+                preço = st.number_input(f"Preço de {row['DESCRIÇÃO']}", min_value=0.0, value=row['R$'], key=f"preço_{index}")
+                desconto = st.number_input(f"Desconto (%) para {row['DESCRIÇÃO']}", min_value=0.0, max_value=100.0, value=row['DESCONTO'], key=f"desconto_{index}")
+                df.at[index, 'R$'] = preço
+                df.at[index, 'DESCONTO'] = desconto
+        return df
+    else:
+        return pd.DataFrame()
+
+#CALCULAR ORÇAMENTO
+def calcular_orçamento():
+    for index, row in df.iterrows():
+        preço_com_desconto = row['R$'] * (1 - row['DESCONTOS'] / 100)
+        df.at[index, 'Preço com desconto'] = preço_com_desconto
+        total += preço_com_desconto
+    return df, total
+
+#PROCESSO PARA GERAR O PDF DO ORÇAMENTO
+def gerar_pdf():
+    pdf = FPDF()
+    pdf.add_page()
+    pdf.set_font("Arial", size=12)
+
+    pdf.cell(200, 10, txt="Orçamento de Produtos", ln=True, align='C')
+
+    pdf.ln(10)
+    pdf.cell(40, 10, row['DESCRIÇÃO'], border=1)
+    pdf.cell(40, 10, f"R$ row{['R$']:.2f}", border=1)
+    pdf.cell(40, 10, f"{row['DESCONTOS']}%", border=1)
+    pdf.cell(40, 10, f"R$ {row['Preço com desconto']:.2f}", border=1)
+    pdf.ln()
+
+    buffer=BytesIO()
+    pdf.output(buffer)
+    buffer.seek(0)
+    return buffer
+
+
 #data = st.file_uploader("Faça Upload da Lista.XLSX para envio em lote.", type=["xlsx", "xls"])
 #PressBotaoEnviaLISTA = st.button(label = '✔️ ENVIAR PARA LISTA')
 #if data is not None:
