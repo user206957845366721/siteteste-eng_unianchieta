@@ -97,38 +97,7 @@ def gerar_pdf():
     buffer.seek(0)
     return buffer
 
-def main():
-    st.title("Calculadora de Orçamento")
 
-    # Carregar a planilha de produtos
-    df = carregar_planilha()
-
-    if df is not None:
-        # Selecionar os produtos
-        df_selecionados = selecionar_produtos(df)
-        
-        # Adicionar preços e descontos aos produtos
-        df_com_precos = adicionar_precos_descontos(df_selecionados)
-        
-        # Calcular o total do orçamento
-        df_com_precos, total = calcular_orcamento(df_com_precos)
-
-        # Exibir o orçamento calculado
-        st.write("Orçamento Calculado:")
-        st.dataframe(df_com_precos)
-
-        # Botão para gerar o PDF do orçamento
-        if st.button("Gerar Orçamento em PDF"):
-            buffer_pdf = gerar_pdf(df_com_precos, total)
-            st.download_button(
-                label="Baixar Orçamento em PDF",
-                data=buffer_pdf,
-                file_name="orcamento.pdf",
-                mime="application/pdf"
-            )
-
-if __name__ == "__main__":
-    main()
 
 
 #data = st.file_uploader("Faça Upload da Lista.XLSX para envio em lote.", type=["xlsx", "xls"])
