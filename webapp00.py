@@ -83,22 +83,23 @@ def adicionar_preços_descontos(df):
 
 #CALCULAR ORÇAMENTO
 def calcular_orçamento(df_com_preços):
-    if 'Preço com desconto' not in df_com_preços.columns:
-        df_com_preços['Preço com desconto'] = 0.0
-    if 'Total' not in df_com_preços.columns:
+    if df_com_preços is not None and 'R$' in df_com_preços.columns and 'DESCONTO' in df_com_preços.columns:
+        if 'Preço com desconto' not in df_com_preços.columns:
+            df_com_preços['Preço com desconto'] = 0.0
+        if 'Total' not in df_com_preços.columns:
         df_com_preços['Total'] = 0.0
-    total = 0
-    for index, row in df_com_preços.iterrows():
-        preço_com_desconto = row['R$'] * (1 - row['DESCONTO'] / 100)
-        total_com_quantidade = preço_com_desconto * row['QUANTIDADE']
+        total = 0
+        for index, row in df_com_preços.iterrows():
+            preço_com_desconto = row['R$'] * (1 - row['DESCONTO'] / 100)
+            total_com_quantidade = preço_com_desconto * row['QUANTIDADE']
         
-        df_com_preços.at[index, 'Preço com desconto'] = preço_com_desconto
-        df_com_preços.at[index, 'Total'] = total_com_quantidade
-        total += tota_com_quantidade
-    return df_com_preços, total
-else:
-    st.error("Colunas 'R$' ou 'DESCONTO' ausentes.")
-return df_com_preços, 0
+            df_com_preços.at[index, 'Preço com desconto'] = preço_com_desconto
+            df_com_preços.at[index, 'Total'] = total_com_quantidade
+            total += tota_com_quantidade
+        return df_com_preços, total
+    else:
+        st.error("Colunas 'R$' ou 'DESCONTO' ausentes.")
+    return df_com_preços, 0
 
 #PROCESSO PARA GERAR O PDF DO ORÇAMENTO
 def gerar_pdf():
