@@ -61,7 +61,7 @@ def selecionar_produtos(df):
     return pd.DataFrame
 
 #ADD PREÇOS, DESCONTOS, QUANTIDADES
-def adicionar_preços_descontos(df):
+def adicionar_preços_descontos_quantidade(df):
     if df is not None:
         if 'DESCONTO' not in df.columns:
             df['DESCONTO'] = 0.0
