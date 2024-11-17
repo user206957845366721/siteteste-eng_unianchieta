@@ -85,7 +85,7 @@ def adicionar_preços_descontos(df):
 def calcular_orçamento(df_com_preços):
     if 'Preço com desconto' not in df_com_preços.columns:
         df_com_preços['Preço com desconto'] = 0.0
-    if 'Total' not in df_com_preços..columns:
+    if 'Total' not in df_com_preços.columns:
         df_com_preços['Total'] = 0.0
     total = 0
     for index, row in df_com_preços.iterrows():
