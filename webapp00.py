@@ -1,9 +1,9 @@
 # MEU PRIMEIRO WEB APP
 import streamlit as st
 import pandas as pd
-import numpy as np
-import requests
 from fpdf import FPDF
+import os
+import io
 
 st.set_page_config(
     page_title="Calculadora de Orçamentos",
