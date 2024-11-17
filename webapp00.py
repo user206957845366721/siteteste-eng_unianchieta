@@ -131,12 +131,13 @@ def gerar_pdf():
         pdf.cell(60, 10, f"R$ {row['Total']:.2f}", border=1)
         pdf.ln()
 
-temp_dir ="/tmp/orcamentos"
-if not os.path.exists(temp_dir):
-    os.makedirs(temp_dir)
+    temp_dir ="/tmp/orcamentos"
+    if not os.path.exists(temp_dir):
+        os.makedirs(temp_dir)
 
-caminho_arquivo_pdf = os.path.join(temp_dir, "orcamento.pdf")
-pdf.output(caminho_arquivo_pdf)
+    caminho_arquivo_pdf = os.path.join(temp_dir, "orcamento.pdf")
+    pdf.output(caminho_arquivo_pdf)
+    return caminho_arquivo_pdf
 
 def main():
     st.title("Calculadora de Orçamento")
