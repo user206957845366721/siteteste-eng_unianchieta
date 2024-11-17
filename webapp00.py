@@ -95,7 +95,7 @@ def calcular_orçamento(df_com_preços):
         
             df_com_preços.at[index, 'Preço com desconto'] = preço_com_desconto
             df_com_preços.at[index, 'Total'] = total_com_quantidade
-            total += tota_com_quantidade
+            total += total_com_quantidade
         return df_com_preços, total
     else:
         st.error("Colunas 'R$' ou 'DESCONTO' ausentes.")
