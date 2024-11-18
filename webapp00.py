@@ -106,7 +106,8 @@ def gerar_pdf(df_com_preços):
     if df_com_preços.empty:
         st.warning("O Dataframe está vazio Não é possível gerar o PDF.")
         return None
-        
+
+    #DEFINIÇÃO DO PDF - TAMANHO DE LINHAS E COLUNAS, ESPAÇAMENTOS, DISPOSIÇÃO GERAL ETC
     pdf = FPDF()
     pdf.add_page()
     pdf.set_font("Arial", size=12)
@@ -114,12 +115,13 @@ def gerar_pdf(df_com_preços):
     pdf.cell(200, 10, txt="Orçamento de Produtos", ln=True, align='C')
     pdf.ln(10)
 
-    pdf.multi_cell(120, 15, "Descrição", border=1)
-    pdf.multi_cell(120, 15, "Preço", border=1)
-    pdf.multi_cell(120, 15, "Desconto", border=1)
-    pdf.multi_cell(120, 15, "Quantidade", border=1)
-    pdf.multi_cell(120, 15, "Preço com Desconto", border=1)
-    pdf.multi_cell(120, 15, "Total", border=1)
+    largura_coluna = [100, 30, 30, 30, 30, 30]
+    pdf.multi_cell(largura_coluna[1], 15, "Descrição", border=1)
+    pdf.multi_cell(largura_coluna[2], 15, "Preço", border=1)
+    pdf.multi_cell(largura_coluna[3], 15, "Desconto", border=1)
+    pdf.multi_cell(largura_coluna[4], 15, "Quantidade", border=1)
+    pdf.multi_cell(largura_coluna[5], 15, "Preço com Desconto", border=1)
+    pdf.multi_cell(largura_coluna[6], 15, "Total", border=1)
     pdf.ln()
 
     for index, row in df_com_preços.iterrows():
@@ -131,6 +133,10 @@ def gerar_pdf(df_com_preços):
         pdf.multi_cell(120, 15, f"R$ {row['Total']:.2f}", border=1)
         pdf.ln()
 
+        if pdf.get_y() + 45 > 270:     #ADICIONA UMA PAGINA, SE NAO TIVER ESPAÇO
+            pdf.add_page()
+
+    #CRIA DIRETORIO TEMPORARIO PARA POSSIBILITAR DOWNLOAD
     temp_dir ="/tmp/orcamentos"
     if not os.path.exists(temp_dir):
         os.makedirs(temp_dir)
@@ -139,25 +145,24 @@ def gerar_pdf(df_com_preços):
     pdf.output(caminho_arquivo_pdf)
     return caminho_arquivo_pdf
 
-# Função principal do app
+#FUNÇÃO APP
 def main():
     st.title("Calculadora de Orçamento")
 
-    # Carregar planilha
+    #CARREGAMENTO DA PLANILHA COM OS PRODUTOS
     df = carregar_planilha()
 
     if df is not None:
-        # Selecionar produtos
         df_selecionados = selecionar_produtos(df)
         if not df_selecionados.empty:
-            # Adicionar preços, descontos e quantidades
+            # ADICIONA PREÇOS-DESCONTOS-QTDS
             df_com_preços = adicionar_preços_descontos_quantidade(df_selecionados)
-            # Calcular orçamento
+            #CALCULA ORÇAMENTO
             df_com_preços, total = calcular_orçamento(df_com_preços)
             st.write("Orçamento Calculado:")
             st.dataframe(df_com_preços)
 
-            # Gerar PDF quando botão for pressionado
+            #GERA PDF NO DIRETORIO TEMP
             if st.button("Gerar orçamento em PDF"):
                 caminho_pdf = gerar_pdf(df_com_preços)
                 if caminho_pdf:
