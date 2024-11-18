@@ -139,37 +139,37 @@ def gerar_pdf():
     pdf.output(caminho_arquivo_pdf)
     return caminho_arquivo_pdf
 
+# Função principal do app
 def main():
     st.title("Calculadora de Orçamento")
 
-    # Carregar a planilha de produtos
+    # Carregar planilha
     df = carregar_planilha()
 
     if df is not None:
-        # Selecionar os produtos
+        # Selecionar produtos
         df_selecionados = selecionar_produtos(df)
-        
-        # Adicionar preços e descontos aos produtos
-        df_com_preços = adicionar_preços_descontos_quantidade(df_selecionados)
-        
-        # Calcular o total do orçamento
-        df_com_preços, total = calcular_orçamento(df_com_preços)
+        if not df_selecionados.empty:
+            # Adicionar preços, descontos e quantidades
+            df_com_preços = adicionar_preços_descontos_quantidade(df_selecionados)
+            # Calcular orçamento
+            df_com_preços, total = calcular_orçamento(df_com_preços)
+            st.write("Orçamento Calculado:")
+            st.dataframe(df_com_preços)
 
-        # Exibir o orçamento calculado
-        st.write("Orçamento Calculado:")
-        st.dataframe(df_com_preços)
-
-        # Botão para gerar o PDF do orçamento
-        if st.button("Gerar Orçamento em PDF"):
-            caminho_pdf = gerar_pdf(df_com_preços)
-            if caminho_pdf:
-                with open(caminho_pdf, "rb") as f:
-                    st.download_button(
-                        label="Baixar orçamento em PDF",
-                        data=f,
-                        file_name="orcamento.pdf",
-                        mime="application/pdf"
-                    )
+            # Gerar PDF quando botão for pressionado
+            if st.button("Gerar orçamento em PDF"):
+                caminho_pdf = gerar_pdf(df_com_preços)
+                if caminho_pdf:
+                    # Permitir que o usuário baixe o arquivo PDF
+                    with open(caminho_pdf, "rb") as f:
+                        st.download_button(
+                            label="Baixar Orçamento em PDF",
+                            data=f,
+                            file_name="orcamento.pdf",
+                            mime="application/pdf"
+                        )
 
 if __name__ == "__main__":
     main()
+
