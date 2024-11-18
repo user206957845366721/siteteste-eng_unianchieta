@@ -127,7 +127,7 @@ def gerar_pdf(df_com_preços):
         pdf.cell(6, 10, f"R$ {row['R$']:.2f}", border=1)
         pdf.cell(60, 10, f"{row['DESCONTO']}%", border=1)
         pdf.cell(60, 10, f"{row['QUANTIDADE']}", border=1)
-        pdf.cell(60, 10, f"R$ {row['Preço com Desconto']:.2f}", border=1)
+        pdf.cell(60, 10, f"R$ {row['Preço com desconto']:.2f}", border=1)
         pdf.cell(60, 10, f"R$ {row['Total']:.2f}", border=1)
         pdf.ln()
 
