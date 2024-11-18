@@ -116,12 +116,12 @@ def gerar_pdf(df_com_preços):
     pdf.ln(10)
 
     largura_coluna = [100, 30, 30, 30, 30, 30]
-    pdf.multi_cell(largura_coluna[1], 15, "Descrição", border=1)
-    pdf.multi_cell(largura_coluna[2], 15, "Preço", border=1)
-    pdf.multi_cell(largura_coluna[3], 15, "Desconto", border=1)
-    pdf.multi_cell(largura_coluna[4], 15, "Quantidade", border=1)
-    pdf.multi_cell(largura_coluna[5], 15, "Preço com Desconto", border=1)
-    pdf.multi_cell(largura_coluna[6], 15, "Total", border=1)
+    pdf.multi_cell(largura_coluna[0], 15, "Descrição", border=1)
+    pdf.multi_cell(largura_coluna[1], 15, "Preço", border=1)
+    pdf.multi_cell(largura_coluna[2], 15, "Desconto", border=1)
+    pdf.multi_cell(largura_coluna[3], 15, "Quantidade", border=1)
+    pdf.multi_cell(largura_coluna[4], 15, "Preço com Desconto", border=1)
+    pdf.multi_cell(largura_coluna[5], 15, "Total", border=1)
     pdf.ln()
 
     for index, row in df_com_preços.iterrows():
