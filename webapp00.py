@@ -111,24 +111,24 @@ def gerar_pdf(df_com_preços):
     pdf.add_page()
     pdf.set_font("Arial", size=12)
 
-    pdf.cell(200, 10, txt="Orçamento de Produtos", ln=True, align='C')
+    pdf.multi_cell(200, 10, txt="Orçamento de Produtos", ln=True, align='C')
     pdf.ln(10)
 
-    pdf.cell(120, 15, "Descrição", border=1)
-    pdf.cell(120, 15, "Preço", border=1)
-    pdf.cell(120, 15, "Desconto", border=1)
-    pdf.cell(120, 15, "Quantidade", border=1)
-    pdf.cell(120, 15, "Preço com Desconto", border=1)
-    pdf.cell(120, 15, "Total", border=1)
+    pdf.multi_cell(120, 15, "Descrição", border=1)
+    pdf.multi_cell(120, 15, "Preço", border=1)
+    pdf.multi_cell(120, 15, "Desconto", border=1)
+    pdf.multi_cell(120, 15, "Quantidade", border=1)
+    pdf.multi_cell(120, 15, "Preço com Desconto", border=1)
+    pdf.multi_cell(120, 15, "Total", border=1)
     pdf.ln()
 
     for index, row in df_com_preços.iterrows():
-        pdf.cell(120, 15, row['DESCRIÇÃO'], border=1)
-        pdf.cell(120, 15, f"R$ {row['R$']:.2f}", border=1)
-        pdf.cell(120, 15, f"{row['DESCONTO']}%", border=1)
-        pdf.cell(120, 15, f"{row['QUANTIDADE']}", border=1)
-        pdf.cell(120, 15, f"R$ {row['Preço com desconto']:.2f}", border=1)
-        pdf.cell(120, 15, f"R$ {row['Total']:.2f}", border=1)
+        pdf.multi_cell(120, 15, row['DESCRIÇÃO'], border=1)
+        pdf.multi_cell(120, 15, f"R$ {row['R$']:.2f}", border=1)
+        pdf.multi_cell(120, 15, f"{row['DESCONTO']}%", border=1)
+        pdf.multi_cell(120, 15, f"{row['QUANTIDADE']}", border=1)
+        pdf.multi_cell(120, 15, f"R$ {row['Preço com desconto']:.2f}", border=1)
+        pdf.multi_cell(120, 15, f"R$ {row['Total']:.2f}", border=1)
         pdf.ln()
 
     temp_dir ="/tmp/orcamentos"
