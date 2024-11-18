@@ -114,21 +114,21 @@ def gerar_pdf(df_com_preços):
     pdf.cell(200, 10, txt="Orçamento de Produtos", ln=True, align='C')
     pdf.ln(10)
 
-    pdf.cell(60, 10, "Descrição", border=1)
-    pdf.cell(60, 10, "Preço", border=1)
-    pdf.cell(60, 10, "Desconto", border=1)
-    pdf.cell(60, 10, "Quantidade", border=1)
-    pdf.cell(60, 10, "Preço com Desconto", border=1)
-    pdf.cell(60, 10, "Total", border=1)
+    pdf.cell(120, 60, "Descrição", border=1)
+    pdf.cell(120, 60, "Preço", border=1)
+    pdf.cell(120, 60, "Desconto", border=1)
+    pdf.cell(120, 60, "Quantidade", border=1)
+    pdf.cell(120, 60, "Preço com Desconto", border=1)
+    pdf.cell(120, 60, "Total", border=1)
     pdf.ln()
 
     for index, row in df_com_preços.iterrows():
-        pdf.cell(60, 10, row['DESCRIÇÃO'], border=1)
-        pdf.cell(6, 10, f"R$ {row['R$']:.2f}", border=1)
-        pdf.cell(60, 10, f"{row['DESCONTO']}%", border=1)
-        pdf.cell(60, 10, f"{row['QUANTIDADE']}", border=1)
-        pdf.cell(60, 10, f"R$ {row['Preço com desconto']:.2f}", border=1)
-        pdf.cell(60, 10, f"R$ {row['Total']:.2f}", border=1)
+        pdf.cell(120, 60, row['DESCRIÇÃO'], border=1)
+        pdf.cell(120, 60, f"R$ {row['R$']:.2f}", border=1)
+        pdf.cell(120, 60, f"{row['DESCONTO']}%", border=1)
+        pdf.cell(120, 60, f"{row['QUANTIDADE']}", border=1)
+        pdf.cell(120, 60, f"R$ {row['Preço com desconto']:.2f}", border=1)
+        pdf.cell(120, 60, f"R$ {row['Total']:.2f}", border=1)
         pdf.ln()
 
     temp_dir ="/tmp/orcamentos"
