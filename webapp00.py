@@ -111,7 +111,7 @@ def gerar_pdf(df_com_preços):
     pdf.add_page()
     pdf.set_font("Arial", size=12)
 
-    pdf.multi_cell(200, 10, txt="Orçamento de Produtos", ln=True, align='C')
+    pdf.cell(200, 10, txt="Orçamento de Produtos", ln=True, align='C')
     pdf.ln(10)
 
     pdf.multi_cell(120, 15, "Descrição", border=1)
