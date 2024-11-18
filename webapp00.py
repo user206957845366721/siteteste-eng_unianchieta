@@ -102,7 +102,7 @@ def calcular_orçamento(df_com_preços):
     return df_com_preços, 0
 
 #PROCESSO PARA GERAR O PDF DO ORÇAMENTO
-def gerar_pdf():
+def gerar_pdf(df_com_preços):
     if df_com_preços.empty:
         st.warning("O Dataframe está vazio Não é possível gerar o PDF.")
         return None
