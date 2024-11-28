@@ -115,7 +115,7 @@ def gerar_pdf(df_com_preços):
     pdf.cell(200, 10, txt="Orçamento de Produtos", ln=True, align='C')
     pdf.ln(10)
 
-    largura_coluna = [100, 30, 30, 30, 30, 30]
+    largura_coluna = [30, 30, 30, 30, 30, 30]
     pdf.multi_cell(largura_coluna[0], 15, "Descrição", border=1)
     pdf.multi_cell(largura_coluna[1], 15, "Preço", border=1)
     pdf.multi_cell(largura_coluna[2], 15, "Desconto", border=1)
@@ -125,12 +125,12 @@ def gerar_pdf(df_com_preços):
     pdf.ln()
 
     for index, row in df_com_preços.iterrows():
-        pdf.multi_cell(120, 15, row['DESCRIÇÃO'], border=1)
-        pdf.multi_cell(120, 15, f"R$ {row['R$']:.2f}", border=1)
-        pdf.multi_cell(120, 15, f"{row['DESCONTO']}%", border=1)
-        pdf.multi_cell(120, 15, f"{row['QUANTIDADE']}", border=1)
-        pdf.multi_cell(120, 15, f"R$ {row['Preço com desconto']:.2f}", border=1)
-        pdf.multi_cell(120, 15, f"R$ {row['Total']:.2f}", border=1)
+        pdf.multi_cell(60, 15, row['DESCRIÇÃO'], border=1)
+        pdf.multi_cell(60, 15, f"R$ {row['R$']:.2f}", border=1)
+        pdf.multi_cell(60, 15, f"{row['DESCONTO']}%", border=1)
+        pdf.multi_cell(60, 15, f"{row['QUANTIDADE']}", border=1)
+        pdf.multi_cell(60, 15, f"R$ {row['Preço com desconto']:.2f}", border=1)
+        pdf.multi_cell(60, 15, f"R$ {row['Total']:.2f}", border=1)
         pdf.ln()
 
         if pdf.get_y() + 45 > 270:     #ADICIONA UMA PAGINA, SE NAO TIVER ESPAÇO
