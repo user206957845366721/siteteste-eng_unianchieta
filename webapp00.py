@@ -125,12 +125,12 @@ def gerar_pdf(df_com_preços):
     pdf.ln()
 
     for index, row in df_com_preços.iterrows():
-        pdf.cell(90, 15, row['DESCRIÇÃO'], border=1)
-        pdf.cell(90, 15, f"R$ {row['R$']:.2f}", border=1)
-        pdf.cell(90, 15, f"{row['DESCONTO']}%", border=1)
-        pdf.cell(90, 15, f"{row['QUANTIDADE']}", border=1)
-        pdf.cell(90, 15, f"R$ {row['Preço com desconto']:.2f}", border=1)
-        pdf.cell(90, 15, f"R$ {row['Total']:.2f}", border=1)
+        pdf.multi_cell(90, 15, row['DESCRIÇÃO'], border=1)
+        pdf.multi_cell(90, 15, f"R$ {row['R$']:.2f}", border=1)
+        pdf.multi_cell(90, 15, f"{row['DESCONTO']}%", border=1)
+        pdf.multi_cell(90, 15, f"{row['QUANTIDADE']}", border=1)
+        pdf.multi_cell(90, 15, f"R$ {row['Preço com desconto']:.2f}", border=1)
+        pdf.multi_cell(90, 15, f"R$ {row['Total']:.2f}", border=1)
         pdf.ln()
 
         if pdf.get_y() + 45 > 270:     #ADICIONA UMA PAGINA, SE NAO TIVER ESPAÇO
