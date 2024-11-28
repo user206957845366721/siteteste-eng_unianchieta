@@ -128,7 +128,7 @@ def gerar_pdf(df_com_preços):
     pdf.ln()
 
     for index, row in df_com_preços.iterrows():
-        DESC = row['DESCRIÇÃO']
+        DESC = str(row['DESCRIÇÃO'])
         pdf.cell(40, 15, DESC([0:10]), border=1)
         pdf.cell(40, 15, f"R$ {row['R$']:.2f}", border=1)
         pdf.cell(40, 15, f"{row['DESCONTO']}%", border=1)
