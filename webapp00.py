@@ -108,10 +108,10 @@ def gerar_pdf(df_com_preços):
         return None
 
     #DEFINIÇÃO DO PDF - TAMANHO DE LINHAS E COLUNAS, ESPAÇAMENTOS, DISPOSIÇÃO GERAL ETC
-    fpdf = FPDF(orientation="landscape", format="A4")
     pdf = FPDF()
     pdf.add_page()
     pdf.set_font("Arial", size=12)
+    pdf.orientation("L", "A4")
 
     pdf.cell(200, 10, txt="Orçamento de Produtos", ln=True, align='C')
     pdf.ln(10)
