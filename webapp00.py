@@ -109,9 +109,7 @@ def gerar_pdf(df_com_preços):
 
     #DEFINIÇÃO DO PDF - TAMANHO DE LINHAS E COLUNAS, ESPAÇAMENTOS, DISPOSIÇÃO GERAL ETC
     pdf = FPDF()
-    for i in range(9):
-        if i == 6:
-            pdf.add_page(format=(210 * (1 - i/10), 297 * (1 - i/10)))
+    pdf.add_page()
     pdf.set_font("Arial", size=12)
     
     pdf.cell(200, 10, txt="Orçamento de Produtos", ln=True, align='C')
