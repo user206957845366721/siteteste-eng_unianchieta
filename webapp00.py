@@ -115,7 +115,7 @@ def gerar_pdf(df_com_preços):
     pdf.cell(200, 10, txt="Orçamento de Produtos", ln=True, align='C')
     pdf.ln(10)
 
-    largura_coluna = [1000, 30, 30, 30, 30, 40]
+    largura_coluna = [100, 30, 30, 30, 30, 40]
     #string = "freeCodeCamp"
     #print(string[0:5])
      
@@ -128,7 +128,7 @@ def gerar_pdf(df_com_preços):
     pdf.ln()
 
     for index, row in df_com_preços.iterrows():        
-        pdf.cell(100, 15, row['DESCRIÇÃO'][:8], border=1)
+        pdf.cell(100, 15, row['DESCRIÇÃO'][:15], border=1)
         pdf.cell(30, 15, f"R$ {row['R$']:.2f}", border=1)
         pdf.cell(30, 15, f"{row['DESCONTO']}%", border=1)
         pdf.cell(30, 15, f"{row['QUANTIDADE']}", border=1)
