@@ -108,7 +108,7 @@ def gerar_pdf(df_com_preços):
         return None
 
     #DEFINIÇÃO DO PDF - TAMANHO DE LINHAS E COLUNAS, ESPAÇAMENTOS, DISPOSIÇÃO GERAL ETC
-    pdf = FPDF()
+    pdf = fpdf.FPDF(orientation="landscape", format="A4")
     pdf.add_page()
     pdf.set_font("Arial", size=12)
 
