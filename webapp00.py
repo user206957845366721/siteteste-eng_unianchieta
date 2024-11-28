@@ -6,7 +6,7 @@ import os
 import io
 
 st.set_page_config(
-    page_title="Calculadora de Orçamentos",
+    page_title="Portal de Vendas",
     page_icon="🧮",
     layout="centered",
     initial_sidebar_state="expanded",
@@ -21,7 +21,7 @@ with st.container():
     st.image("tech.jpg", use_column_width=True)
     
 st.title("Bem-vindo/a!")
-st.header("Calculadora de Orçamentos - Eng. Civil 2024")
+st.header("Portal de Vendas")
 
 st.markdown(
     """
@@ -43,7 +43,7 @@ def carregar_planilha():
         st.write("Produtos carregados:", df)
         return df
     else:
-        st.warning("Por favor, carregue uma planilha do Excel.")
+        st.warning("Por favor, carregue sua planilha de produtos aqui.")
     return None
 
 #SELECIONAR PRODUTOS
